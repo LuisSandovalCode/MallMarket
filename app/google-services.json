@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "392342786635",
+    "firebase_url": "https://mallmarket.firebaseio.com",
+    "project_id": "mallmarket",
+    "storage_bucket": "mallmarket.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392342786635:android:08595d26995bb3fbfd73ce",
+        "android_client_info": {
+          "package_name": "com.luis.mallmarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "392342786635-8vtems7qq3tns3dm6h1f0ok1jigs5l1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQGQF_h5iIxNHaNNS98vZ3wOe7_d9US_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "392342786635-8vtems7qq3tns3dm6h1f0ok1jigs5l1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
