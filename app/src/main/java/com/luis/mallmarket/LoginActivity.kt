@@ -12,7 +12,9 @@ import androidx.lifecycle.ViewModelProviders
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.FirebaseApp
+import com.luis.mallmarket.interfaces.ResponseLogin
 import com.luis.mallmarket.viewmodel.LoginActivityViewModel
+import java.lang.Exception
 
 class LoginActivity : AppCompatActivity() {
 
@@ -32,12 +34,24 @@ class LoginActivity : AppCompatActivity() {
 
 
         btnLogIn.setOnClickListener {
-            if(model.logInUser(userEmail.text.toString(),userPassword.text.toString())){
-                Toast.makeText(this,"WELCOME",Toast.LENGTH_LONG).show()
-            }
-            else{
-                Toast.makeText(this,"FAIL TO SIGN IN",Toast.LENGTH_LONG).show()
-            }
+            var context = this
+            model.logInUser(userEmail.text.toString(),userPassword.text.toString(),object : ResponseLogin<String>{
+
+                override fun getResponse(result: String) {
+
+                    if (!result.isNullOrEmpty()){
+                        Toast.makeText(context,result,Toast.LENGTH_LONG).show()
+                    }
+                    else{
+                        Toast.makeText(context,"WELCOME USER",Toast.LENGTH_LONG).show()
+                    }
+                }
+
+                override fun throwException(ex: Exception) {
+                    Toast.makeText(context,ex.message,Toast.LENGTH_LONG).show()
+                }
+
+            })
         }
     }
 }
