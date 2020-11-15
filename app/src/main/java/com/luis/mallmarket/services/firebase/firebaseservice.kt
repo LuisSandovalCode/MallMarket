@@ -41,7 +41,13 @@ class firebaseservice {
     fun signUpWithEmailAndPassword(email: String,password: String,callback: CallbackFirebase<FirebaseUser>){
         authFirebase.createUserWithEmailAndPassword(email,password)
             .addOnCompleteListener {
-                callback.onSuccess(it.result!!.user ?: null,it.isSuccessful,"")
+
+                if (!it.isSuccessful){
+                    callback.onSuccess(null,false,it.exception!!.message.toString())
+                }
+                else{
+                    callback.onSuccess(it.result!!.user,true,"")
+                }
             }
             .addOnFailureListener {
                 callback.onFailed(it)

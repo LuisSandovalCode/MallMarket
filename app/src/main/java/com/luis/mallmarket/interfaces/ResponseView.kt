@@ -2,7 +2,7 @@ package com.luis.mallmarket.interfaces
 
 import java.lang.Exception
 
-interface ResponseLogin<T> {
+interface ResponseView<T> {
 
     fun getResponse(result : T)
 
